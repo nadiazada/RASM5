@@ -6,6 +6,35 @@ extern "C" void aBubbleSort(int a[], int length);
 
 using namespace std;
 
+
+void cBubbleSort(int a[], int length)
+{
+        int i, j, temp;
+
+        for (i = 0; i < length; i++)
+        {
+                for (j = 0; j < length - i - 1; j++)
+                {
+                        if (a[j + 1] < a[j])
+                        {
+                                temp = a[j];
+                                a[j] = a[j + 1];
+                                a[j + 1] = temp;
+                        }
+                }
+        }
+}
+
+void save(int *arr, int size, const char* filename)
+{
+int size = 0;
+ ofstream outFile(filename);
+        for(int i = 0; i < size; ++i){
+        outFile << arr[i] << endl;
+        }
+ outFile.close();
+}
+
 int main(){
 
 
@@ -95,17 +124,6 @@ do
         }
 
 }while(choice!=4)
-
-
-void save(int *arr, int size, const char* filename)
-{
-int size = 0;
- ofstream outFile(filename);
-        for(int i = 0; i < size; ++i){
-        outFile << arr[i] << endl;
-        }
- outFile.close();
-}
 
 
 return 0;
