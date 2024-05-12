@@ -1,3 +1,4 @@
+extern "C" void aBubbleSort(int a[], int length);
 #include <iostream>
 #include <fstream>
 #include <ctime>
@@ -13,13 +14,14 @@ fstream inFile;
 ofstream outFile;
 int choice = 0;
 int count = 0;
+int index = 0;
 int arr1[MAX_SIZE];
 int arr2[MAX_SIZE];
 
 clock_t start;
 clocl_t end;
-double cTime;
-double aTime;
+double cTime =0.0;
+double aTime = 0.0;
 
 
 
@@ -70,7 +72,7 @@ do
                 start = clock();
                 cBubbleSort(arr1, MAX_SIZE);
                 end = clock();
-                cTime = (end - start)/1000000.0;
+                cTime = (end - start)/ CLOCKS_PER_SEC;
                 save(arr1, MAX_SIZE, "c_bubblesort.txt");
                 cout << "BubbleSort in C++ in done!/n";
                 break;
@@ -79,8 +81,8 @@ do
                 start = clock();
                 aBubbleSort(arr2, MAX_SIZE);
                 end = clock();
-                aTime = (end - start)/1000000.0;
-                save(arr2, MAX_SIZE, "c_bubblesort.txt");
+                aTime = (end - start)/ CLOCKS_PER_SEC;
+                save(arr2, MAX_SIZE, "a_bubblesort.txt");
                 cout << "BubbleSort in ASM in done!/n";
                 break;
       case 4:
@@ -96,7 +98,7 @@ do
 
 void save(int *arr, MAX_SIZE, const char* filename)
 {
-  ofStream outFile(filename);
+  ofstream outFile(filename);
         for(int i = 0; i < MAX_SIZE; ++i){
         outFile << arr[i] << endl;
         }
