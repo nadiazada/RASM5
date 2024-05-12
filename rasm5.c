@@ -19,7 +19,7 @@ int arr1[MAX_SIZE];
 int arr2[MAX_SIZE];
 
 clock_t start;
-clocl_t end;
+clock_t end;
 double cTime =0.0;
 double aTime = 0.0;
 
@@ -43,7 +43,7 @@ do
                 cout << "<4> Quit\n\n";
 
                 //get option
-               cout << "Enter a number: ";
+                cout << "Enter a number: ";
                 cin  >> choice;
                 int i = 0;
 
@@ -70,7 +70,7 @@ do
 
         case 2:
                 start = clock();
-                cBubbleSort(arr1, MAX_SIZE);
+                cBubbleSort(arr1, count);
                 end = clock();
                 cTime = (end - start)/ CLOCKS_PER_SEC;
                 save(arr1, count, "c_bubblesort.txt");
@@ -79,7 +79,7 @@ do
 
         case 3:
                 start = clock();
-                aBubbleSort(arr2, MAX_SIZE);
+                aBubbleSort(arr2, count);
                 end = clock();
                 aTime = (end - start)/ CLOCKS_PER_SEC;
                 save(arr2, count, "a_bubblesort.txt");
@@ -92,6 +92,7 @@ do
         default:
                 cout <<"invlaid case try again/n";
                 break;
+        }
 
 }while(choice!=4)
 
