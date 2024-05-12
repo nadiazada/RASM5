@@ -73,7 +73,7 @@ do
                 cBubbleSort(arr1, MAX_SIZE);
                 end = clock();
                 cTime = (end - start)/ CLOCKS_PER_SEC;
-                save(arr1, MAX_SIZE, "c_bubblesort.txt");
+                save(arr1, count, "c_bubblesort.txt");
                 cout << "BubbleSort in C++ in done!/n";
                 break;
 
@@ -82,7 +82,7 @@ do
                 aBubbleSort(arr2, MAX_SIZE);
                 end = clock();
                 aTime = (end - start)/ CLOCKS_PER_SEC;
-                save(arr2, MAX_SIZE, "a_bubblesort.txt");
+                save(arr2, count, "a_bubblesort.txt");
                 cout << "BubbleSort in ASM in done!/n";
                 break;
       case 4:
@@ -96,13 +96,14 @@ do
 }while(choice!=4)
 
 
-void save(int *arr, MAX_SIZE, const char* filename)
+void save(int *arr, int size, const char* filename)
 {
-  ofstream outFile(filename);
-        for(int i = 0; i < MAX_SIZE; ++i){
+int size = 0;
+ ofstream outFile(filename);
+        for(int i = 0; i < size; ++i){
         outFile << arr[i] << endl;
         }
-  outFile.close();
+ outFile.close();
 }
 
 
