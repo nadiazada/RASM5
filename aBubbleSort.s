@@ -1,4 +1,4 @@
-global aBubbleSort
+.global aBubbleSort
 
 aBubbleSort:
         stp x29, x30, [sp, #-16]!
@@ -11,8 +11,8 @@ outerLoop:
         bge end_outerLoop
 
         sub x3, x1,x2
-        sub x3, x4, #1
-        mov x2, #0
+        sub x3, x3, #1
+        mov x4, #0
 
 innerLoop:
         cmp x4, x3
