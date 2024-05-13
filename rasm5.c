@@ -103,7 +103,7 @@ do
                 end = clock();
                 cTime = (end - start)/ CLOCKS_PER_SEC;
                 save(arr1, count, "c_bubblesort.txt");
-                cout << "BubbleSort in C++ in done!/n";
+                cout << "BubbleSort in C++ in done!\n";
                 break;
 
         case 3:
@@ -112,14 +112,14 @@ do
                 end = clock();
                 aTime = (end - start)/ CLOCKS_PER_SEC;
                 save(arr2, count, "a_bubblesort.txt");
-                cout << "BubbleSort in ASM in done!/n";
+                cout << "BubbleSort in ASM in done!\n";
                 break;
       case 4:
 
-                cout << "Quitting program..";
+                cout << "Quitting program..\n";
 
         default:
-                cout <<"invlaid case try again/n";
+                cout <<"invlaid case try again\n";
                 break;
         }
 
